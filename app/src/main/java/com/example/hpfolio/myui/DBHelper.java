@@ -14,17 +14,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "Friends";
-    private static final String TABLE_NAME = "friendsP";
+    private static final String TABLE_NAME = "friends";
 
     public DBHelper(Context context) {
         super(context, DB_NAME, null, 1);
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(name VARCHAR , email VARCHAR, id (INT (3))PRIMARY KEY )");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(name VARCHAR , email VARCHAR)");
     }
 
     @Override
